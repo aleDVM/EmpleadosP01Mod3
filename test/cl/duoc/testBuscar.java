@@ -9,7 +9,7 @@ public class testBuscar {
 
     public testBuscar() {
     }
-        @Test
+    @Test
     public void testBuscar() {
         System.out.println("Buscar");
         String rut = "11111111";

@@ -9,7 +9,7 @@ public class TestCrear {
         @Test
     public void testCrear() {
         System.out.println("Crear");
-        Empleado obj = new Empleado("121324-4", "Juan", 23, 4);
+        Empleado obj = new Empleado("1219924-4", "Juan", 23, 4);
         BussEmpleado instance = new BussEmpleado();
         boolean expResult = true;
         boolean result = instance.Crear(obj);

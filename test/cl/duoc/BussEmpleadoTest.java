@@ -112,7 +112,7 @@ public class BussEmpleadoTest {
         System.out.println("montoBono");
         BussEmpleado instance = new BussEmpleado();
         int expResult = 0;
-        int result = instance.montoBono();
+        int result = instance.montoBono("11111111");
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
