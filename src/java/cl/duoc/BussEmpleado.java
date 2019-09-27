@@ -111,6 +111,23 @@ public class BussEmpleado {
         return std;
     }
     
-    
+    public int montoBono(){
+        int monto = 0;
+        Empleado obj = new Empleado();
+        try {
+            Conectar db = new Conectar();
+            Connection conn = db.conectarMySQL();
+            String sql = "SELECT * FROM empleado WHERE antiguedad > 3 ";
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            ResultSet rs = pstm.executeQuery();
+            while (rs.next()) {
+                monto = obj.getAntiguedad() * 50000;
+            }
+        } catch (SQLException exe) {
+            System.out.println(exe.getMessage());
+        }
+        
+        return monto;
+    }
 
 }
