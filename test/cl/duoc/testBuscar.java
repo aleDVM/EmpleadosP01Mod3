@@ -12,9 +12,9 @@ public class testBuscar {
     @Test
     public void testBuscar() {
         System.out.println("Buscar");
-        String rut = "11111111";
+        String rut = "55555555";
         BussEmpleado instance = new BussEmpleado();
-        Empleado esperado = new Empleado("11111111", "Joaquina", 36, 3);
+        Empleado esperado = new Empleado("55555555", "Karin", 19, 4);
         Empleado obtenido = instance.Buscar(rut);
         assertEquals(esperado, obtenido);
         // TODO review the generated test code and remove the default call to fail.

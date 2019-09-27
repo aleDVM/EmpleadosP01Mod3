@@ -85,7 +85,7 @@ public class BussEmpleado {
             PreparedStatement pstm = conn.prepareStatement(sql);
             pstm.setString(1, obj.getNombre());
             pstm.setInt(2, obj.getEdad());
-            pstm.setInt(3, obj.getEdad());
+            pstm.setInt(3, obj.getAntiguedad());
             pstm.setString(4, obj.getRut());
             pstm.executeUpdate();
             std = true;
@@ -111,19 +111,17 @@ public class BussEmpleado {
         return std;
     }
     
-    public int montoBono(String rut){
+    public int montoBono(int antiguedad){
         int monto=0;
         Empleado obj = new Empleado();
         try {
             Conectar db = new Conectar();
             Connection conn = db.conectarMySQL();
-            String sql = "SELECT * FROM empleado WHERE antiguedad > 3 and rut = ?";
-            PreparedStatement pstm = conn.prepareStatement(sql);
-            pstm.setString(1, rut);
+            String sql = "SELECT * FROM empleado WHERE antiguedad > 3";
+            PreparedStatement pstm = conn.prepareStatement(sql);        
             ResultSet rs = pstm.executeQuery();
             while (rs.next()) {
-                monto = obj.getAntiguedad() * 50000;
-               
+                monto = antiguedad * 50000;               
             }
         } catch (SQLException exe) {
             System.out.println(exe.getMessage());
